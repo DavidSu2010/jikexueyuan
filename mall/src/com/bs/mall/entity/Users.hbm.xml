@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bs.mall.entity.Users" table="users" catalog="DB_VIP">  <!-- catalog： 数据库 -->
+		<id name="username" type="java.lang.String">
+			<column name="username" length="20" />
+			 <generator class="assigned" />  <!-- 主键是自己定的，不是数据库生成的 -->
+		</id>
+		<many-to-one name="role" class="com.bs.mall.entity.Role"
+			fetch="select">
+			<column name="roleid" />
+		</many-to-one>
+		<property name="password" type="java.lang.String">
+			<column name="password" length="20" />
+		</property>
+	</class>
+</hibernate-mapping>
+    
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.bs.mall.entity.Consume" table="consume" catalog="DB_VIP">  <!-- catalog： 数据库 -->
+        <id name="consumeId" type="java.lang.Integer">
+            <column name="consumeId" />
+            <generator class="identity" /> <!-- identity MySQL数据库；native 跨数据库 -->
+        </id>
+        <many-to-one name="commodityId" class="com.bs.mall.entity.Commodity" fetch="select">
+            <column name="commodityId" />
+        </many-to-one>
+        <many-to-one name="vipid" class="com.bs.mall.entity.Vip" fetch="select">
+            <column name="vipid" />
+        </many-to-one>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="20" />
+        </property>
+        <property name="commodityName" type="java.lang.String">
+            <column name="commodityName" length="30" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="10"/>
+        </property>
+        <property name="practicePrice" type="java.lang.Double">
+            <column name="practicePrice" precision="10" /> <!-- precision 有效数字位数；scale 小数位数 -->
+        </property>
+    </class>
+</hibernate-mapping>
+

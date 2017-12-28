@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bs.mall.entity.Commodity" table="commodity" catalog="DB_VIP">  <!-- catalog： 数据库 -->
+		<id name="commodityId" type="java.lang.Integer">
+			<column name="commodityId" />
+			<generator class="native" /> <!-- identity MySQL数据库；native 跨数据库 -->
+		</id>
+		<property name="commodityName" type="java.lang.String">
+			<column name="commodityName" length="30" />
+		</property>
+		<property name="price" type="java.lang.Double">
+			<column name="price" precision="10" />
+		</property>
+		<property name="agio" type="java.lang.Double">
+			<column name="agio" precision="4" scale="3"/> <!-- precision 有效数字位数；scale 小数位数 -->
+		</property>
+		<set name="consumes" inverse="true">
+			<key>
+				<column name="commodityId"></column>
+			</key>
+			<one-to-many class="com.bs.mall.entity.Consume" />
+		</set>
+	</class>
+</hibernate-mapping>
+

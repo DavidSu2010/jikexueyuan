@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="jsonOutputHelper" class="com.jike.JsonOutputHelper"></bean>
+	<bean id="xmlOutputHelper" class="com.jike.XmlOutputHelper"></bean>
+	<bean id="employee" class="com.jike.Employee">
+	    <property name="name" >
+	        <value>无语</value>
+	    </property>
+	    <property name="age" >
+	        <value>32</value>
+	    </property>
+	    <property name="sex" >
+	        <value>男</value>
+	    </property>
+	    <property name="job" > 
+	        <value>教师</value>
+	    </property>
+	    <property name="iOutputHelper" ref="xmlOutputHelper"/>
+	</bean>
+</beans>

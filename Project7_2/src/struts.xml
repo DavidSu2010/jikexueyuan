@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="searchpoetry" extends="struts-default">
+		<action name="contentAction" class="com.jikexueyuan.poetry.action.PoetryContentAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="nameAction" class="com.jikexueyuan.poetry.action.PoetryNameAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="titleAction" class="com.jikexueyuan.poetry.action.PoetryTitleAction">
+			<result name="success">/index.jsp</result>
+		</action>
+	</package>
+</struts>    
